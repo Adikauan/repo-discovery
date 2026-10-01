@@ -1,0 +1,15 @@
+node_modules/
+backend/.venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+dist/
+build/
+coverage/
+.git/
+Dockerfile*
+.dockerignore
+.env*
+*.log*
+*.tmp
+Thumbs.db
+.DS_Store

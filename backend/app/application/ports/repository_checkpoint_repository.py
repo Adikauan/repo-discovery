@@ -1,0 +1,6 @@
+from typing import Protocol
+
+
+class RepositoryCheckpointRepository(Protocol):
+    def get(self, configuration_id, project_id, branch): ...
+    def put(self, checkpoint) -> None: ...

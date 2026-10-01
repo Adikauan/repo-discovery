@@ -1,0 +1,2 @@
+import { render,screen } from '@testing-library/react'; import { describe,expect,it } from 'vitest'; import { StatusBadge } from '../../shared/components/status/StatusBadge'; import type { PresentationStatus } from '../../shared/types/presentation';
+describe('StatusBadge',()=>{it.each<PresentationStatus>(['active','disabled','paused','pending','running','completed','partially-completed','failed'])('renders textual %s status',(status)=>{render(<StatusBadge status={status}/>);expect(screen.getByText(new RegExp(status.replace('-',' '),'i'))).toBeInTheDocument()})});

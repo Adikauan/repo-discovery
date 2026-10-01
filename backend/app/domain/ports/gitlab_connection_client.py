@@ -1,0 +1,16 @@
+from typing import Protocol
+
+from app.domain.value_objects.connection_validation_result import ConnectionValidationResult
+from app.domain.value_objects.gitlab_discovery_result import GitLabDiscoveryResult
+
+
+class GitLabConnectionClient(Protocol):
+    def validate(self, gitlab_url: str, token: str) -> ConnectionValidationResult: ...
+
+    def list_top_level_groups(self, gitlab_url: str, token: str) -> GitLabDiscoveryResult: ...
+
+    def list_group_children(self, gitlab_url: str, token: str, group_id: int) -> GitLabDiscoveryResult: ...
+
+    def get_group(self, gitlab_url: str, token: str, group_id: int) -> GitLabDiscoveryResult: ...
+
+    def get_project(self, gitlab_url: str, token: str, project_id: int) -> GitLabDiscoveryResult: ...

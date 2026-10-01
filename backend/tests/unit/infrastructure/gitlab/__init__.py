@@ -1,0 +1,1 @@
+"""GitLab adapter unit tests."""

@@ -1,0 +1,13 @@
+from __future__ import annotations
+
+from typing import Protocol
+from uuid import UUID
+
+from app.domain.author_policy import AuthorPolicy
+
+
+class AuthorPolicyRepository(Protocol):
+    def list_for_configuration(self, configuration_id: UUID) -> list[AuthorPolicy]: ...
+    def get(self, policy_id: UUID) -> AuthorPolicy | None: ...
+    def upsert(self, policy: AuthorPolicy) -> None: ...
+    def delete(self, policy_id: UUID, configuration_id: UUID) -> bool: ...

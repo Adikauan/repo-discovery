@@ -1,0 +1,2 @@
+import type { ReactNode } from 'react'; import { Box, FormLabel, Typography } from '@mui/material';
+export function FormFieldGroup({ label, required, helper, children }: { label:string; required?:boolean; helper?:string; children:ReactNode }) { return <Box><FormLabel required={required} sx={{ display:'block', color:'text.primary', fontWeight:700, mb:1 }}>{label}</FormLabel>{children}{helper&&<Typography variant="body2" color="text.secondary" sx={{ mt:.75 }}>{helper}</Typography>}</Box> }

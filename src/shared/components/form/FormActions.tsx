@@ -1,0 +1,2 @@
+import type { ReactNode } from 'react'; import { Box } from '@mui/material';
+export function FormActions({ secondary, primary }: { secondary?:ReactNode; primary:ReactNode }) { return <Box sx={{ display:'flex', justifyContent:'space-between', gap:2, flexDirection:{xs:'column-reverse',sm:'row'}, pt:2, mt:3, borderTop:1, borderColor:'divider' }}>{secondary}<Box sx={{ ml:{sm:'auto'} }}>{primary}</Box></Box> }

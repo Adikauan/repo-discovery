@@ -1,0 +1,2 @@
+import { Box, Chip, List, ListItem, ListItemText } from '@mui/material'; import { SectionHeader } from '../layout/SectionHeader';
+export function SelectedItemsPanel({ items }: {items:string[]}) { return <Box sx={{ border:1,borderColor:'divider',borderRadius:2,p:2,minHeight:390 }}><SectionHeader title={`Selected (${items.length})`}/><List>{items.map(i=><ListItem key={i} divider secondaryAction={<Chip label="Preview" size="small" color="primary" variant="outlined"/>}><ListItemText primary={i}/></ListItem>)}</List></Box> }

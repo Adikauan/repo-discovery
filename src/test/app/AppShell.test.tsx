@@ -1,0 +1,2 @@
+import { screen } from '@testing-library/react'; import { describe, expect, it } from 'vitest'; import { renderApp } from '../renderApp';
+describe('AppShell',()=>{it('provides one primary navigation and main landmark',()=>{renderApp('/');expect(screen.getByRole('navigation',{name:/primary/i})).toBeInTheDocument();expect(screen.getByRole('main')).toBeInTheDocument();expect(screen.getByText('RepoMiner')).toBeInTheDocument();expect(screen.getAllByRole('link')).toHaveLength(4)})});

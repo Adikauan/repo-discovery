@@ -1,0 +1,2 @@
+import type { ReactNode } from 'react'; import { Box, Typography } from '@mui/material';
+export function DashboardHeader({ title, subtitle, status, action }: {title:string;subtitle?:string;status?:ReactNode;action?:ReactNode}) { return <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:2,flexWrap:'wrap'}}><Box><Box sx={{display:'flex',gap:1.5,alignItems:'center',flexWrap:'wrap'}}><Typography variant="h1">{title}</Typography>{status}</Box>{subtitle&&<Typography color="text.secondary" sx={{mt:.75}}>{subtitle}</Typography>}</Box>{action}</Box> }

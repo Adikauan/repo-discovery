@@ -1,0 +1,6 @@
+from typing import Protocol
+
+
+class CredentialCipher(Protocol):
+    def encrypt(self, token: str) -> bytes: ...
+    def decrypt(self, encrypted_token: bytes) -> str: ...

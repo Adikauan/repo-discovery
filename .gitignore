@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+backend/.venv/
+backend/.uv-cache/
+backend/*.egg-info/
+backend/.pytest_cache/
+backend/pytest-cache-files-*/
+backend/**/__pycache__/
+backend/**/*.py[cod]

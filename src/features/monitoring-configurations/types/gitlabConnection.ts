@@ -1,0 +1,4 @@
+export type GitLabConnectionState = 'not_configured' | 'configured_not_validated' | 'validated' | 'failed';
+export type GitLabValidationResult = 'success' | 'invalid_url' | 'invalid_credentials' | 'forbidden' | 'unreachable' | 'timeout' | 'invalid_response' | 'rate_limited' | 'provider_unavailable';
+export interface GitLabConnectionStatus { configuration_id: string; credential_configured: boolean; state: GitLabConnectionState; latest_result: GitLabValidationResult | null; last_validation_at: string | null; last_successful_validation_at: string | null; }
+export interface GitLabValidationResponse { configuration_id: string; credential_source: 'saved_credential' | 'candidate_token'; state: 'validated' | 'failed'; result: GitLabValidationResult; message: string; checked_at: string; last_successful_validation_at: string | null; }

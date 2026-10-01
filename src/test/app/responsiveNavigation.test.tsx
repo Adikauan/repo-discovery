@@ -1,0 +1,2 @@
+import { screen } from '@testing-library/react'; import { describe,expect,it } from 'vitest'; import { renderApp } from '../renderApp';
+describe('responsive navigation',()=>{it('shows persistent navigation at 1440px',()=>{renderApp('/',1440);expect(screen.getByRole('navigation',{name:/primary/i})).toBeVisible();expect(screen.queryByRole('button',{name:/open navigation/i})).not.toBeInTheDocument()});it.each([375,768])('shows compact navigation control at %ipx',(width)=>{renderApp('/',width);expect(screen.getByRole('button',{name:/open navigation/i})).toBeInTheDocument()})});

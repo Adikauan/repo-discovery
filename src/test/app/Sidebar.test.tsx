@@ -1,0 +1,2 @@
+import { screen } from '@testing-library/react'; import userEvent from '@testing-library/user-event'; import { describe, expect, it } from 'vitest'; import { renderApp } from '../renderApp';
+describe('Sidebar',()=>{it('exposes active item and keyboard-operable links',async()=>{renderApp('/settings');const link=screen.getByRole('link',{name:'Settings'});expect(link).toHaveAttribute('aria-current','page');link.focus();await userEvent.keyboard('{Enter}');expect(link).toHaveFocus()})});
